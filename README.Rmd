@@ -29,7 +29,21 @@ The package template was created as follows:
 ```{r, eval=FALSE}
 usethis::use_description()
 rextendr::use_extendr()
-
 ```
+
+The odjitter Rust crate ported into the src/rust folder.
+
+```{r, eval=FALSE, echo=FALSE}
+list.files("src/rust/")
+file.edit("~/orgs/atumWorld/odjitter/src/lib.rs")
+file.edit("~/orgs/atumWorld/odjitter/Cargo.toml")
+file.edit("src/rust/Cargo.toml")
+```
+
+
+```{bash, echo=FALSE, eval=FALSE}
+cp -Rv ~/orgs/atumWorld/odjitter/src/scrape.rs src/rust/src/
+```
+
 
 
