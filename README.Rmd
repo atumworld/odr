@@ -23,8 +23,10 @@ remotes::install_github("atumworld/odr")
 library(odr)
 ```
 
+## R interface to `odjitter` Rust crate via system commands
 
-```{r, out.width="40%", fig.show='hold'}
+
+```{r, out.width="50%", fig.show='hold'}
 od = readr::read_csv("https://github.com/dabreegster/odjitter/raw/main/data/od.csv")
 zones = sf::read_sf("https://github.com/dabreegster/odjitter/raw/main/data/zones.geojson")
 names(zones)[1] = "geo_code"
