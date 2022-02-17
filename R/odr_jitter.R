@@ -36,9 +36,9 @@ odr_jitter = function(
     od,
     zones,
     subpoints = NULL,
-    zone_name_key = "geo_code",
-    origin_key = "geo_code1",
-    destination_key = "geo_code2",
+    zone_name_key = NULL,
+    origin_key = NULL,
+    destination_key = NULL,
     subpoints_origins = subpoints,
     subpoints_destinations = subpoints,
     disaggregation_key = "all",
@@ -54,8 +54,14 @@ odr_jitter = function(
     zones_path = NULL,
     data_dir = tempdir()
     ) {
-  od_csv_path = file.path(data_dir, "od.csv")
-  zones_path = file.path(data_dir, "zones.geojson")
+  
+  # assigning null variables to appropriate values
+  if(is.null(zone_name_key)) zone_name_key = names(zones)[1]
+  if(is.null(origin_key)) origin_key = names(od)[1]
+  if(is.null(destination_key)) destination_key = names(od)[1]
+  
+  if(is.null(od_csv_path)) od_csv_path = file.path(data_dir, "od.csv")
+  if(is.null(zones_path)) zones_path = file.path(data_dir, "zones.geojson")
   if(!is.null(subpoints)) {
     subpoints_origins_path = subpoints_destinations_path = file.path(data_dir, "subpoints.geojson")
     sf::write_sf(subpoints, subpoints_origins_path, delete_dsn = TRUE)

@@ -8,21 +8,23 @@ odr_jitter(
   od,
   zones,
   subpoints = NULL,
-  zone_name_key = "geo_code",
-  origin_key = "geo_code1",
-  destination_key = "geo_code2",
+  zone_name_key = NULL,
+  origin_key = NULL,
+  destination_key = NULL,
   subpoints_origins = subpoints,
   subpoints_destinations = subpoints,
   disaggregation_key = "all",
-  disaggregation_threshold = 1e+06,
+  disaggregation_threshold = 10000,
   min_distance_meters = 1,
   weight_key_destinations = NULL,
   weight_key_origins = NULL,
-  rng_seed = NULL,
+  rng_seed = round(runif(n = 1) * 1e+05),
   od_csv_path = NULL,
   output_path = NULL,
+  subpoints_origins_path = NULL,
   subpoints_destinations_path = NULL,
-  zones_path = NULL
+  zones_path = NULL,
+  data_dir = tempdir()
 )
 }
 \arguments{
@@ -57,6 +59,8 @@ odr_jitter(
 \item{od_csv_path}{Where the CSV file is stored (usually irrelevant)}
 
 \item{output_path}{Where to save the output (usually irrelevant)}
+
+\item{subpoints_origins_path}{Location of subpoints file (usually irrelevant)}
 
 \item{subpoints_destinations_path}{Location of subpoints file (usually irrelevant)}
 
