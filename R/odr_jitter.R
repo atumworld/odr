@@ -58,7 +58,7 @@ odr_jitter = function(
   # assigning null variables to appropriate values
   if(is.null(zone_name_key)) zone_name_key = names(zones)[1]
   if(is.null(origin_key)) origin_key = names(od)[1]
-  if(is.null(destination_key)) destination_key = names(od)[1]
+  if(is.null(destination_key)) destination_key = names(od)[2]
   
   if(is.null(od_csv_path)) od_csv_path = file.path(data_dir, "od.csv")
   if(is.null(zones_path)) zones_path = file.path(data_dir, "zones.geojson")
