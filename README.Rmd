@@ -16,17 +16,21 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of odr is to provide an R interface to the [odjitter](https://github.com/dabreegster/odjitter) Rust crate for processing origin-destination data.
+The goal of {odrust} is to provide an R interface to the [odjitter](https://github.com/dabreegster/odjitter) Rust crate for processing origin-destination data.
+
+```{r, eval=FALSE}
+remotes::install_github("atumworld/odrust")
+```
 
 ```{r}
-remotes::install_github("atumworld/odr")
-library(odr)
+library(odrust)
 ```
+
 
 ## R interface to `odjitter` Rust crate via system commands
 
 
-```{r, out.width="50%", fig.show='hold'}
+```{r jitter, out.width="50%", fig.show='hold'}
 od = readr::read_csv("https://github.com/dabreegster/odjitter/raw/main/data/od.csv")
 zones = sf::read_sf("https://github.com/dabreegster/odjitter/raw/main/data/zones.geojson")
 names(zones)[1] = "geo_code"
@@ -39,8 +43,6 @@ nrow(od_jittered)
 plot(od_unjittered)
 plot(od_jittered)
 ```
-
-
 
 ## R interface to Rust via rextendr (not currently working)
 
@@ -70,6 +72,4 @@ file.edit("src/rust/Cargo.toml")
 ```{bash, echo=FALSE, eval=FALSE}
 cp -Rv ~/orgs/atumWorld/odjitter/src/scrape.rs src/rust/src/
 ```
-
-
 

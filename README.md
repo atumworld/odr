@@ -6,25 +6,16 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of odr is to provide an R interface to the
+The goal of {odrust} is to provide an R interface to the
 [odjitter](https://github.com/dabreegster/odjitter) Rust crate for
 processing origin-destination data.
 
 ``` r
-remotes::install_github("atumworld/odr")
-#> Using github PAT from envvar GITHUB_PAT
-#> Downloading GitHub repo atumworld/odr@HEAD
-#> 
-#> * checking for file ‘/tmp/Rtmpl0NGFS/remotes1f58ab3db3630a/atumworld-odr-12cb2f5/DESCRIPTION’ ... OK
-#> * preparing ‘odr’:
-#> * checking DESCRIPTION meta-information ... OK
-#> * cleaning src
-#> * checking for LF line-endings in source and make files and shell scripts
-#> * checking for empty or unneeded directories
-#> * building ‘odr_0.0.0.9000.tar.gz’
-#> Installing package into '/home/robin/R/x86_64-pc-linux-gnu-library/4.1'
-#> (as 'lib' is unspecified)
-library(odr)
+remotes::install_github("atumworld/odrust")
+```
+
+``` r
+library(odrust)
 ```
 
 ## R interface to `odjitter` Rust crate via system commands
@@ -60,7 +51,7 @@ plot(od_jittered)
 #> all
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-3-1.png" width="50%" /><img src="README_files/figure-gfm/unnamed-chunk-3-2.png" width="50%" />
+<img src="README_files/figure-gfm/jitter-1.png" width="50%" /><img src="README_files/figure-gfm/jitter-2.png" width="50%" />
 
 ## R interface to Rust via rextendr (not currently working)
 

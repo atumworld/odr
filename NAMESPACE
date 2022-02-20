@@ -2,4 +2,4 @@
 
 export(hello_world)
 export(odr_jitter)
-useDynLib(odr, .registration = TRUE)
+useDynLib(odrust, .registration = TRUE)
